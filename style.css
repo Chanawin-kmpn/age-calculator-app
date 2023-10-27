@@ -1,0 +1,283 @@
+:root {
+    --clr-primary-purple: hsl(259, 100%, 65%);
+    --clr-primary-light-red: hsl(0, 100%, 67%);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-off-white: hsl(0, 0%, 94%);
+    --clr-neutral-light-grey: hsl(0, 0%, 86%);
+    --clr-neutral-smokey-grey: hsl(0, 1%, 44%);
+    --clr-neutral-off-black: hsl(0, 0%, 8%);
+
+    --fs-100: 0.75rem;
+    --fs-200: 0.875rem;
+    --fs-300: 1rem;
+    --fs-400: 1.25rem;
+    --fs-500: 2rem;
+    --fs-600: 3.5rem;
+    --fs-800: 6.5rem;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-black: 800;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 94%);
+}
+
+/* Font section*/
+
+p {
+    color: var(--clr-neutral-off-black);
+    font-style: italic;
+    font-weight: var(--fw-black);
+}
+
+/* Font section*/
+
+.wrapper {
+    background-color: var(--clr-neutral-white);
+    border-radius: 1.5rem 1.5rem 6.25rem 1.5rem;
+    margin: 5.5rem 1rem 0;
+    padding: 3rem 1.5rem;
+}
+
+
+/* Main section */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Input section */
+
+.input-section {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 1rem;
+}
+
+.date-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    flex: 1 0 0;
+    width: 3.48rem;
+    max-width: 10rem;
+}
+
+label {
+    color: var(--clr-neutral-smokey-grey);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.0125rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--clr-neutral-light-grey);
+    padding: 0.75rem 1rem;
+}
+
+input:hover {
+    border-color: var(--clr-primary-purple);
+}
+
+input::placeholder {
+    color: var(--clr-neutral-off-black);
+    opacity: 0.5;
+}
+
+.input-section[data-invalid='true'] input {
+    border-color: var(--clr-primary-light-red);
+}
+
+.error-message {
+    color: var(--clr-primary-light-red);
+    font-size: var(--fs-200);
+    font-style: italic;
+    font-weight: var(--fw-regular);
+    opacity: 0;
+}
+
+.error .error-message[data-show-message="true"] {
+    opacity: 1;
+}
+
+.error label {
+    color: var(--clr-primary-light-red);
+}
+
+.error input {
+    border-color: var(--clr-primary-light-red);
+}
+
+/* Input section */
+
+/* Submit section */
+
+.submit-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13.5rem;
+    border: none;
+    background-color: var(--clr-primary-purple);
+    padding: 1.25rem;
+    z-index: 2;
+    cursor: pointer;
+    transition: background-color 150ms ease-out;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--clr-neutral-off-black);
+}
+
+button img {
+    width: 1.5rem;
+    aspect-ratio: 1;
+}
+
+hr {
+    color: var(--clr-neutral-light-grey);
+    position: absolute;
+    width: 100%;
+    height: 0.0625rem;
+    top: 50%;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Submit section */
+
+/* Display section */
+
+.date-display {
+    display: flex;
+    gap: 0.5rem;
+}
+
+span {
+    color: var(--clr-primary-purple);
+    font-size: var(--fs-600);
+    font-style: italic;
+    font-weight: var(--fw-black);
+    line-height: 1.1;
+    letter-spacing: -0.07rem;
+}
+
+.date-display>p {
+    font-size: var(--fs-600);
+    line-height: 1.1;
+    letter-spacing: -0.07rem;
+}
+
+/* Display section */
+
+/* Main section */
+
+@media (min-width: 750px) {
+    .wrapper {
+        max-width: 52.5rem;
+        border-radius: 1.5rem 1.5rem 12.5rem 1.5rem;
+        margin: 10.69rem auto;
+        padding: 3.5rem;
+    }
+
+    /* Main section */
+    main {
+        gap: 0;
+    }
+
+    .input-section {
+        gap: 2rem;
+    }
+
+    .date-card {
+        gap: 0.5rem;
+    }
+
+    label {
+        font-size: var(--fs-200);
+    }
+
+    input {
+        font-size: var(--fs-500);
+        letter-spacing: 0.02rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Input section */
+
+    /* Submit section */
+
+    .submit-section {
+        justify-content: flex-end;
+    }
+
+    button {
+        padding: 1.63rem;
+    }
+
+    button img {
+        width: 2.75rem;
+    }
+    /* Submit section */
+
+    /* Display section */
+
+    span {
+        font-size: var(--fs-800);
+        letter-spacing: -0.13rem;
+    }
+
+    .date-display>p {
+        font-size: var(--fs-800);
+        letter-spacing: -0.13rem;
+    }
+    /* Display section */
+    /* Main section */
+
+}
